@@ -1,7 +1,13 @@
 <?php
-  $conn = new mysqli("localhost", "root", "", "lft");
+define( 'DB_NAME', 'lft' );
+define( 'DB_USER', 'root' );
+define( 'DB_PASSWORD', '' );
+define( 'DB_HOST', 'localhost' );
 
-  if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-  }
+$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+if (!$conn) {
+  echo "Eres subnormal";
+}
+
 ?>
