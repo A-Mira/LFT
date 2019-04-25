@@ -1,3 +1,11 @@
 <?php
-  echo "<script>window.open('login.php', '_self')</script>";
+  session_start();
+  include("config.php");
+  if (isset($_SESSION["username"])) {
+    header("location:home.php");
+  }
+
+  echo "<h1>Bienvenido a LFT</h1><br>
+  <br>
+  <a href='login.php'>Inicia sesión aquí</a>";
 ?>
