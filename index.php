@@ -4,8 +4,8 @@
   if (isset($_SESSION["username"])) {
     header("location:home.php");
   }
-
-  echo "<h1>Bienvenido a LFT</h1><br>
-  <br>
-  <a href='login.php'>Inicia sesión aquí</a>";
 ?>
+  <h1>Bienvenido a LFT</h1>
+  <br>
+  <br>
+  <a href='login.php'>Inicia sesión aquí</a>
