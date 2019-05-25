@@ -1,70 +1,27 @@
 <?php
 session_start();
 
-include("config.php");
-	if (isset($_SESSION["username"])) {
+include("includes/config.php");
+
+	if (isset($_SESSION["id"])) {
 		header("location:home.php");
 	}
+
 	if (isset($_POST['login'])) {
+		$username = $_POST["username"];
+		$password = md5($_POST["password"]);
 
-		$username = htmlentities(mysqli_real_escape_string($conn, $_POST['username']));
-		$pass = htmlentities(mysqli_real_escape_string($conn, $_POST['password']));
-		$select_user = "select * from lft_user where username='$username' AND password='$pass'";
-		$query= mysqli_query($conn, $select_user);
-		$check_user = @mysqli_num_rows($query);
+		$tabla = mysqli_query($conn,"SELECT id, username, password FROM usuarios
+			WHERE username LIKE '$username' AND password LIKE '$password'");
 
-		if($check_user == 1){
-			$_SESSION['username'] = $username;
+		$id = mysqli_fetch_array($tabla)[0]["id"];
 
-			echo "<script>window.open('home.php', '_self')</script>";
+		if (mysqli_num_rows($tabla) == 1) {
+			$_SESSION["id"] = $id;
+			echo "<script>window.location.replace('home.php')</script>";
 		}else{
-			echo"<script>alert('Your Username or Password is incorrect')</script>";
+			echo "<script> alert('Usuario o contraseña incorrectos')</script>";
+			echo "<script> window.location.replace('login.html')</script>";
 		}
 	}
 ?>
-
-<!DOCTYPE html>
-
-<html lang="es" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>Log in to LFT</title>
-
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-
-  <div class="row">
-    <form class="col s12 m6 offset-m4" method="post" action="">
-
-      <div class="row">
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="icon_username" type="text" class="validate" name="username">
-          <label for="icon_username">Username</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">lock_outline</i>
-          <input id="icon_password" type="password" class="validate" name="password">
-          <label for="icon_password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s2">
-          <button class="waves-effect waves-light btn" type = "Submit" name = "login" value = "login">
-          Submit <i class="material-icons right">send</i>
-        </button>
-      </div>
-    </div>
-  </form>
-</div>
-
-<script type="text/javascript" src="js/materialize.min.js"></script>
-</body>
-</html>
