@@ -23,5 +23,7 @@ include("includes/config.php");
 			echo "<script> alert('Usuario o contraseña incorrectos')</script>";
 			echo "<script> window.location.replace('login.html')</script>";
 		}
+	}else{
+	    header("location:register.html");
 	}
 ?>

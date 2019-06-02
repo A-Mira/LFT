@@ -7,6 +7,7 @@
   }
 ?>
   <h1>Bienvenido a LFT</h1>
-  <br>
-  <br>
+  <br/>
+  <br/>
   <a href='login.html'>Inicia sesión aquí</a>
+  <a href='register.html'>¿Nuevo? ¡Regístrate!</a>

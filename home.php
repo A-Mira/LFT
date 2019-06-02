@@ -17,4 +17,5 @@
 <!-- Fin Topbar -->
 
   <h1>Bienvenido, <?php echo $_SESSION["id"]; ?></h1>
+  
 <a href='logout.php'>Cierra sesión aquí</a>
