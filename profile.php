@@ -1,10 +1,8 @@
 <?php
-  if (!isset($_SESSION["id"])) {
-    header("location:index.php");
-  }
-  if (!isset($_GET["p"])) {
-    header("location:home.html");
-  }
+  include("includes/checksession.php");
+  include("includes/funciones.php");
 
-  
+  if (!isset($_GET['p'])) {
+    $_GET['p']=$self;
+  }
 ?>
