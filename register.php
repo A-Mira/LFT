@@ -14,17 +14,17 @@ include("includes/config.php");
     $email = $_POST["email"];
 
 
-		$tabla = mysqli_query($conn,"SELECT username FROM usuarios
+		$tabla = mysqli_query($conn,"SELECT username FROM usuario
 			WHERE username LIKE '$username'");
 
 		if (mysqli_num_rows($tabla) == 0) {
-      $insert = mysqli_query($conn,"INSERT INTO usuarios (username, password, nombre, email)
+      $insert = mysqli_query($conn,"INSERT INTO usuario (username, password, nombre, email)
       VALUES ('$username','$password','$nombre','$email')");
       if (!$insert) {
           echo "<script> alert('Error en la creación del usuario.')</script>";
           echo "<script>window.location.replace('register.html')</script>";
       }
-      $tabla = mysqli_query($conn,"SELECT id FROM usuarios WHERE username LIKE '$username' AND password LIKE '$password'");
+      $tabla = mysqli_query($conn,"SELECT id FROM usuario WHERE username LIKE '$username' AND password LIKE '$password'");
       if (mysqli_num_rows($tabla)==1) {
         $_SESSION['id']=mysqli_fetch_array($tabla)[0];
         echo "<script>window.location.replace('home.php')</script>";
