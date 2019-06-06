@@ -20,8 +20,7 @@ function loadpost($conn, $post){ // ID, autor, text, date
     <div style='text-align: right' class='info'>
       <span>".$post_date."</span>
     </div>
-  </div>
-  ";
+  </div>";
 }
 
 function checkfollow($conn, $profile_id, $self){

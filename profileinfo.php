@@ -1,5 +1,5 @@
 <div style="background-color: #39796b; font-size: 20px; border: 2px black solid" class="row col s12">
-<div class="col s12">
+  <div class="col s12">
 
 
     <span><?php echo "$profile_nombre  <span style='font-size: 16px; color: silver'>@$profile_username</span>" ?></span>
@@ -12,11 +12,11 @@
       }
     }
     ?>
-  <div class="row">
-      <div style="font-size: 20px" class="col s12">
+    <div class="row">
+      <div style="font-size: 18px" class="col s12">
         <span>Seguidores: <?php echo "$followers"; ?></span>
         <span>Siguiendo: <?php echo "$follows"; ?></span>
       </div>
-  </div>
+    </div>
   </div>
 </div>

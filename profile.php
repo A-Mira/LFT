@@ -50,7 +50,7 @@ $tabla_posts = mysqli_query($conn, "SELECT * FROM post WHERE id_autor = $profile
     <div class="col s6 offset-s1">
       <?php include "profileinfo.php";
       if ($profile_id == $self) include "compose.php"; ?>
-
+      <br><br><br><br>
       <?php
       while ($post = mysqli_fetch_array($tabla_posts)) {
         loadpost($conn, $post);
