@@ -3,7 +3,7 @@
 <html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Log in to LFT</title>
+  <title>Home / LFT</title>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -40,7 +40,7 @@
       }
       ?>
     </div>
-    <div class="col s3 offset-s1">
+    <div style="position: sticky; top: 0;" class="col s3 offset-s1">
       <?php include "whoami.php"; ?>
     </div>
   </div>

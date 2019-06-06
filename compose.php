@@ -1,4 +1,4 @@
-  <div  style='border-bottom: 2px solid black' class="row">
+  <div  class="row">
     <form class="col s12" method="post" action="compose_insert.php">
         <form class="col s12">
           <div class="row">
@@ -14,3 +14,4 @@
             <input id="url" name="url" type="hidden" value="<?php echo $_SERVER['REQUEST_URI'];?>"/>
           </div>
       </form>
+      

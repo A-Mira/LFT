@@ -23,4 +23,14 @@ function loadpost($conn, $post){ // ID, autor, text, date
   </div>
   ";
 }
+
+function checkfollow($conn, $profile_id, $self){
+  $check = mysqli_query($conn, "SELECT * FROM user_follow WHERE id_follower = $self AND id_followed = $profile_id");
+
+  if (mysqli_num_rows($check) == 1) {
+    return 1;
+  }else{
+    return 0;
+  }
+}
 ?>
