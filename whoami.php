@@ -15,7 +15,22 @@
   $self_posts = mysqli_fetch_array($self_posts)[0];
 ?>
 
+  <div style="border-bottom: 1px solid black" class="row">
 
+    <form class="search" action="search.php" method="get">
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_search" type="text" class="validate" name="q"/>
+          <label for="icon_search">Search...</label>
+        </div>
+      </div>
+      </form>
+
+
+
+  </div>
   <div style='border-bottom: 1px solid black; font-size:20px' class='row info'>
     <p>
       <span><?php echo $self_nombre; ?></span>
