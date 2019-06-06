@@ -7,7 +7,7 @@
   $self_username = $perfil[1];
 
   $follows = mysqli_query($conn, "SELECT count(*) FROM user_follow WHERE id_follower = $self");
-  $followers = mysqli_query($conn, "SELECT count(*) FROM user_follow WHERE id_following = $self");
+  $followers = mysqli_query($conn, "SELECT count(*) FROM user_follow WHERE id_followed = $self");
   $follows = mysqli_fetch_array($follows)[0];
   $followers = mysqli_fetch_array($followers)[0];
 
