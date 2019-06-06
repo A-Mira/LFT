@@ -10,7 +10,7 @@
 
   $tabla_posts = mysqli_query($conn, "SELECT * FROM usuario WHERE ID LIKE '$profile_id'");
 
-  $tabla_posts = mysqli_query($conn, "SELECT * FROM post WHERE id_autor = $profile_id ORDER BY date");
+  $tabla_posts = mysqli_query($conn, "SELECT * FROM post WHERE id_autor = $profile_id ORDER BY date  DESC");
   while ($post = mysqli_fetch_array($tabla_posts)) {
     loadpost($conn, $post);
   }

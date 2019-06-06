@@ -10,14 +10,14 @@ function loadpost($conn, $post){ // ID, autor, text, date
   $post_date = $post[3];
 
   echo"
-  <div class='row post'>
-    <div class='row author'>
+  <div style='border-bottom: 1px solid black' class='row post'>
+    <div style='padding-bottom: 15px' class='author'>
       <a href='profile.php?p=".$autor_id."'>".$post_autor."</a>
     </div>
-    <div class='row content'>
+    <div style='padding-bottom: 5px' class='content'>
       <span>".$post_text."</span>
     </div>
-    <div class='row info'>
+    <div style='text-align: right' class='info'>
       <span>".$post_date."</span>
     </div>
   </div>
