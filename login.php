@@ -10,7 +10,6 @@ include("includes/config.php");
 	if (isset($_POST['login'])) {
 		$username = $_POST["username"];
 		$password = md5($_POST["password"]);
-		echo $password;
 		$tabla = mysqli_query($conn,"SELECT id, username, password FROM usuario
 			WHERE username LIKE '$username' AND password LIKE '$password'");
 

@@ -20,7 +20,6 @@
 
   $tabla_seguidos = mysqli_query($conn, "SELECT id_followed FROM user_follow WHERE id_follower = $self");
   $seguidos = [$self];
-  if(mysqli_num_rows($tabla_seguidos) > 0){
     while ($datos = mysqli_fetch_array($tabla_seguidos)) {
       $seguidos[sizeof($seguidos)] = $datos[0];
     }
@@ -37,7 +36,6 @@
             loadpost($conn, $post);
           }
         }
-      }
       ?>
     </div>
     <div style="position: sticky; top: 0;" class="col s3 offset-s1">
