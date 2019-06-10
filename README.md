@@ -6,4 +6,4 @@ This is going to be very slow as I'm new on developement.
 Contact for any purpose: albertomira97@gmail.com || therealberoth@gmail.com
 
 People currently working on this project:
-- Alberto Mira Ternero (@BerothW)
+- Alberto Mira Ternero

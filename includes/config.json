@@ -1,4 +1,6 @@
 {
+  "version":"desarrollo",
+
   "database":{
     "username": "root",
     "password": "",
