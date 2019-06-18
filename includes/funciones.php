@@ -1,5 +1,5 @@
 <?php
-function loadpost($conn, $post){ // ID, autor, text, date
+function loadpost($conn, $post, $self){ // ID, autor, text, date
   //aquí hay que escribir todo el post.
   $post_id = $post[0];
   $post_autor = mysqli_query($conn, "SELECT ID, nombre FROM usuario WHERE ID like '$post[1]'");
@@ -12,7 +12,13 @@ function loadpost($conn, $post){ // ID, autor, text, date
   echo"
   <div style='border-bottom: 1px solid black' class='row post'>
     <div style='padding-bottom: 15px' class='author'>
-      <a href='profile.php?p=".$autor_id."'>".$post_autor."</a>
+      <a href='profile.php?p=".$autor_id."'>".$post_autor."</a>";
+      if ($autor_id == $self) {
+        echo "<a style= 'float: right; color: red' href='delete.php?a=".$autor_id."&p=".$post_id."&u=".$_SERVER['REQUEST_URI']."'>
+        <i class='material-icons left'>cancel</i>
+        </a>";
+      }
+  echo"
     </div>
     <div style='padding-bottom: 5px' class='content'>
       <span>".$post_text."</span>

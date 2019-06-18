@@ -33,7 +33,7 @@
         $tabla_posts = mysqli_query($conn, "SELECT * FROM post WHERE id_autor IN ($seguidos) ORDER BY date DESC");
         if(mysqli_num_rows($tabla_posts) > 0){
           while ($post = mysqli_fetch_array($tabla_posts)) {
-            loadpost($conn, $post);
+            loadpost($conn, $post, $self);
           }
         }
       ?>

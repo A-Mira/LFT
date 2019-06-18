@@ -53,7 +53,7 @@ $tabla_posts = mysqli_query($conn, "SELECT * FROM post WHERE id_autor = $profile
       <br><br><br><br>
       <?php
       while ($post = mysqli_fetch_array($tabla_posts)) {
-        loadpost($conn, $post);
+        loadpost($conn, $post, $self);
       }
       ?>
     <?php if ($profile_id == $self) echo "</div>"; ?>
